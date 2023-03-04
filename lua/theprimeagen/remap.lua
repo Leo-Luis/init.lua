@@ -28,7 +28,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
+-- vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -43,9 +43,15 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+-- vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- mappings from old arch setup
+-- spell check, o=orthography
+vim.keymap.set("n", "<leader>o", "<cmd>setlocal spell! spelllang=en_us<CR")
+vim.keymap.set("n", "<leader>ss", "<cmd>!clear && shellcheck -x %<CR>")
+-- open corresponding .pdf/.html or preview
+vim.keymap.set("n", "<leader>p", "<cmd>!opout <c-r>%<CR><CR>")
